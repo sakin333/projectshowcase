@@ -8,21 +8,39 @@
 </head>
 <body>
     <header>
-        <h1 class="heading">My Project Showcase</h1>
+        <div class="logo-container">
+            <h1>Sakin</h1>
+        </div>
+        <ul class="links-container">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </header>
-    <main class="container">
+    <div class="main-container">
+    <main class="wrapper" id="#project">
+        <h1>My Project Showcase</h1>
+        <div class="container">
         <div class="project-container">
             <img src="addressbook.png" alt="Address Book" class="project-image">
             <h2 class="title">Address Book</h2>
             <p class="description">Address Book using shell scripting</p>
-            <a href="https://git.bajratechnologies.com/Sakin3/angular-curriculum/-/tree/main/day2/addressBook?ref_type=heads" target="_blank" class="button_primary">View Code</a>
+            <div>
+                <button class="button_primary"><a href="https://git.bajratechnologies.com/Sakin3/angular-curriculum/-/tree/main/day2/addressBook?ref_type=heads" target="_blank">View Code</a></button>
+            </div>
         </div>  
         <div class="project-container">
             <img src="figmatocode.jpg" alt="Figma To Code" class="project-image">
             <h2 class="title">Figma Design to Code</h2>
             <p class="description">Converting a figma design to an actual website using html and css</p>
-            <a href="https://git.bajratechnologies.com/Sakin3/angular-curriculum/-/tree/main/day6/FignmaToCode?ref_type=heads" target="_blank" class="button_primary">View Code</a>
+            <div class="preview">
+                <button class="button_primary"><a href="https://git.bajratechnologies.com/Sakin3/angular-curriculum/-/tree/main/day6/FignmaToCode?ref_type=heads" target="_blank">View Code</a></button>
+                <button class="button_primary"><a href="https://sakin333.github.io/figmaToCode/" target="_blank">Preview</a></button>
+            </div>
         </div>  
+        </div>
     </main>
+    </div>
 </body>
 </html>
