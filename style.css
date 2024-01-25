@@ -7,6 +7,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
@@ -33,13 +37,18 @@ ul {
 }
 
 header {
+    background-color: #f4f4f4;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 6rem;
     color: #fff;
-    height: 60px;
+    width: 100%;
+    height: 10vh;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 header .logo-container > h1 {
@@ -70,6 +79,10 @@ header .links-container li a:active {
     font-weight: bold;
 }
 
+header .menu-container {
+    display: none;
+}
+
 
 
 .wrapper {
@@ -77,6 +90,10 @@ header .links-container li a:active {
     flex-direction: column;
     align-items: center;
     padding: 2rem 0;
+}
+
+.home {
+    height: 90vh;
 }
 
 .wrapper > h1 {
@@ -89,7 +106,9 @@ header .links-container li a:active {
     /* min-height: 100vh; */
     padding: 1rem;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 2rem;
 }
 
@@ -142,4 +161,51 @@ header .links-container li a:active {
 
 .button_primary:hover {
     background-color: #555;
+}
+
+@media screen and (max-width: 460px) {
+    body {
+        overflow-x: hidden;
+    }
+    header {
+        padding: 0 3rem;
+        position: relative;
+    }
+    header .menu-container {
+        display: block;
+    }
+    header .links-container {
+        /* display: none; */
+        background-color: #ccc;
+        color: #000;
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        right: 50px;
+        transform: translateX(160px);
+        transition: transform 300ms ease-in;
+    }
+
+    header .links-container.show {
+        transform: translateX(0);
+    }
+    .project-container {
+        width: 260px;
+        height: 360px;
+    }
+    .project-image {
+        height: 120px;
+        width: 240px;
+    }
+    .project-container > h2 {
+        font-size: 18px;
+    }
+    .project-container > p{
+        font-size: 16px;
+    }
+    .button_primary {
+        width: 92px;
+        height: 32px;
+    }
 }

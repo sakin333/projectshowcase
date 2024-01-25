@@ -17,9 +17,15 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="menu-container">
+            <img src="./Menu-icon-3.png" alt="menu">
+        </div>
     </header>
     <div class="main-container">
-    <main class="wrapper" id="#project">
+    <main class="wrapper home" id="home">
+        <h1>Home</h1>
+    </main>
+    <main class="wrapper project" id="projects">
         <h1>My Project Showcase</h1>
         <div class="container">
         <div class="project-container">
@@ -42,5 +48,8 @@
         </div>
     </main>
     </div>
+    <script>
+        document.querySelector('.menu-container').addEventListener('click', () => document.querySelector('.links-container').classList.toggle('show')) 
+    </script>
 </body>
 </html>
