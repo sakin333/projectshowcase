@@ -164,9 +164,6 @@ header .menu-container {
 }
 
 @media screen and (max-width: 460px) {
-    body {
-        overflow-x: hidden;
-    }
     header {
         padding: 0 3rem;
         position: relative;
@@ -190,6 +187,7 @@ header .menu-container {
     header .links-container.show {
         transform: translateX(0);
     }
+
     .project-container {
         width: 260px;
         height: 360px;
