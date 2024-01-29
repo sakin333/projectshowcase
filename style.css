@@ -1,5 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
+:root {
+    --main-bg-color: #f4f4f4;
+    --main-text-color: #333;
+    --link-color: #555;
+    --link-hover-color: #333;
+    --menu-bg-color: #ccc;
+    --menu-text-color: #000;
+    --button-bg-color: #333;
+    --button-hover-color: #555;
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Nothing You Could Do', cursive;
+}
 
 * {
     box-sizing: border-box;
@@ -9,12 +19,13 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: var(--font-primary);
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
 }
 
 img {
@@ -37,7 +48,7 @@ ul {
 }
 
 header {
-    background-color: #f4f4f4;
+    background-color: var(--main-bg-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,10 +63,10 @@ header {
 }
 
 header .logo-container > h1 {
-    font-family: 'Nothing You Could Do', cursive;
+    font-family: var(--font-secondary);
     font-size: 36px;
     font-weight: 800;
-    color: #333;
+    color: var(--main-text-color);
 }
 
 header .links-container {
@@ -64,26 +75,24 @@ header .links-container {
 }
 
 header .links-container li a {
-    color: #555;
-    font-family: 'Nothing You Could Do', cursive;
+    color: var(--link-color);
+    font-family: var(--font-secondary);
 }
 
 header .links-container li a:hover {
-    color: #333;
+    color: var(--link-hover-color);
     font-weight: bold;
 }
 
 header .links-container li a:focus,
 header .links-container li a:active {
-    color: #333;
+    color: var(--link-hover-color);
     font-weight: bold;
 }
 
 header .menu-container {
     display: none;
 }
-
-
 
 .wrapper {
     display: flex;
@@ -98,12 +107,15 @@ header .menu-container {
 
 .wrapper > h1 {
     margin-bottom: 1rem;
-    font-family: 'Nothing You Could Do', cursive;
+    font-family: var(--font-secondary);
+}
 
+.main-container {
+    border: 2px solid red;
+    overflow-y: hidden;
 }
 
 .container {
-    /* min-height: 100vh; */
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -132,7 +144,7 @@ header .menu-container {
 
 .title {
     margin-bottom: 1.5rem;
-    color: #333;
+    color: var(--main-text-color);
 }
 
 .description {
@@ -143,7 +155,7 @@ header .menu-container {
 .button_primary {
     cursor: pointer;
     border: none;
-    background-color: #333;
+    background-color: var(--button-bg-color);
     width: 120px;
     height: 46px;
     color: #fff;
@@ -160,10 +172,14 @@ header .menu-container {
 }
 
 .button_primary:hover {
-    background-color: #555;
+    background-color: var(--button-hover-color);
 }
 
 @media screen and (max-width: 460px) {
+    body {
+        margin: 0;
+        overflow-x: hidden;
+    }
     header {
         padding: 0 3rem;
         position: relative;
@@ -172,22 +188,20 @@ header .menu-container {
         display: block;
     }
     header .links-container {
-        /* display: none; */
-        background-color: #ccc;
-        color: #000;
+        background-color: var(--menu-bg-color);
+        color: var(--menu-text-color);
         padding: 1rem 1.5rem;
         flex-direction: column;
         position: absolute;
         top: 100px;
         right: 50px;
-        transform: translateX(160px);
         transition: transform 300ms ease-in;
+        transform: translateX(160px);
     }
 
     header .links-container.show {
         transform: translateX(0);
     }
-
     .project-container {
         width: 260px;
         height: 360px;
@@ -199,7 +213,7 @@ header .menu-container {
     .project-container > h2 {
         font-size: 18px;
     }
-    .project-container > p{
+    .project-container > p {
         font-size: 16px;
     }
     .button_primary {
