@@ -84,8 +84,9 @@ header .links-container li a:hover {
     font-weight: bold;
 }
 
-header .links-container li a:focus,
-header .links-container li a:active {
+.header .links-container li a:target,
+.header .links-container li a:focus,
+.header .links-container li a:active {
     color: var(--link-hover-color);
     font-weight: bold;
 }
@@ -111,7 +112,6 @@ header .menu-container {
 }
 
 .main-container {
-    border: 2px solid red;
     overflow-y: hidden;
 }
 
@@ -140,7 +140,24 @@ header .menu-container {
     border: 1px solid black;
     border-radius: 8px;
     margin-bottom: 1rem;
+    transition: transform 200ms ease-in;
 }
+
+.project-image:hover {
+    transform: scale(1.1);
+}
+/* 
+@keyframes pulse {
+    0% {
+        transform: scale(1.1);
+    }
+    70% {
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+} */
 
 .title {
     margin-bottom: 1.5rem;
@@ -169,10 +186,22 @@ header .menu-container {
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .button_primary:hover {
     background-color: var(--button-hover-color);
+}
+
+.icons-container  {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.icons-container > i {
+    font-size: 32px;
+    opacity: 0.4;
 }
 
 @media screen and (max-width: 460px) {
